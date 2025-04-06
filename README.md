@@ -31,7 +31,8 @@ Add validations to the `Appearance` model:
 Set up the following routes. Make sure to return JSON data in the format specified along with the appropriate HTTP verb.
 
 Recall you can specify fields to include or exclude when serializing a model instance to a dictionary using to_dict() (don't forget the comma if specifying a single field).
-
+### Decided to add an index route
+![alt text](postman_views/my_index.png)
 ###  a. GET /episodes
 Return JSON data in the format below:
         [
@@ -46,6 +47,8 @@ Return JSON data in the format below:
             "number": 2
         }
         ]
+
+![alt text](postman_views/get_episodes.png)
 
 ### b. GET /episodes/:id
 If the `Episode` exists, return JSON data in the format below:
@@ -72,6 +75,7 @@ If the `Episode` does not exist, return the following JSON data, along with the 
         {
         "error": "Episode not found"
         }
+![alt text](postman_views/get_episodes_1.png)
 
 ### c. GET /guests
 Return JSON data in the format below:
@@ -92,6 +96,8 @@ Return JSON data in the format below:
             "occupation": "television actress"
         }
         ]
+![alt text](postman_views/get_guests.png)
+
 ### d. POST /appearances
 This route should create a new `Appearance` that is associated with an existing `Episode` and `Guest`. It should accept an object with the following properties in the body of the request:
         {
@@ -120,3 +126,7 @@ If the `Appearance` is **not** created successfully, return the following JSON d
         {
         "errors": ["validation errors"]
         }
+![alt text](postman_views/post_appearances.png)
+
+after rectifying my appearance model and app code i ot the put put expected
+![alt text](postman_views/fixed_appearance.png)
